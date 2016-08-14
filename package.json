@@ -1,0 +1,27 @@
+{
+  "name": "fkp-react-native-router",
+  "version": "1.0.0",
+  "description": "react-native router",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webkixi/fkp-react-native-router.git"
+  },
+  "keywords": [
+    "react-native",
+    "router"
+  ],
+  "author": "webkixi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webkixi/fkp-react-native-router/issues"
+  },
+  "homepage": "https://github.com/webkixi/fkp-react-native-router#readme",
+  "dependencies": {
+    "fkp-sax": "^1.0.0",
+    "lodash": "^4.15.0"
+  }
+}
