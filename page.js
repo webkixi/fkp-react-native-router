@@ -1,9 +1,11 @@
+import _lodash from 'lodash';
+import _SAX from 'fkp-sax';
 /* pages类及pages生周期 */
 function pages(opts){
 
-    var page = SAX.get('_CURENT_PAGE')
+    var page = _SAX.get('_CURENT_PAGE')
     if (page){
-        var intent = SAX.get(page)
+        var intent = _SAX.get(page)
         this.intent = intent;
     }
     else {
@@ -22,8 +24,8 @@ function pages(opts){
     }
     _dft = Object.keys(defaults)
 
-    if ( _.isObject(opts) ){
-        var defaults = _.extend({}, defaults, opts)
+    if ( _lodash.isObject(opts) ){
+        var defaults = _lodash.extend({}, defaults, opts)
     }
 
     var dft = defaults;
@@ -36,7 +38,7 @@ function pages(opts){
         var _this = this;
         funs.map(function(item, i){
             if (typeof dft[item] === 'function'){
-                if (_.indexOf(_dft, item)>-1)
+                if (_lodash.indexOf(_dft, item)>-1)
                     dft[item].call(_this, _this, _this.intent)
             }
         })
@@ -48,14 +50,14 @@ function pages(opts){
                 _this.innerData = data;
             }
             else{
-                var tmp = _.extend({}, _this.innerData, data)
+                var tmp = _lodash.extend({}, _this.innerData, data)
                 _this.innerData = tmp;
             }
             run.call(_this)
         }
     }
 
-    if (_.indexOf(funs, 'boot')>-1){
+    if (_lodash.indexOf(funs, 'boot')>-1){
         var stat = dft['boot'].call(_this, _this)
         if (stat)
             run.call(_this);

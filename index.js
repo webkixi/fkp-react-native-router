@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Navigator, BackAndroid, Text, Image, TouchableHighlight,Platform } from 'react-native';
-import styles from 'css/index'
 import page from './page'
 import _lodash from 'lodash';
 import _SAX from 'fkp-sax';
@@ -179,7 +178,7 @@ class Navigation extends Component {
             }
             else {
                 return (
-                    <View style={styles.listView}>
+                    <View style={{backgroundColor: '#F5FCFF', overflow: 'hidden'}}>
                         <Text>
                             renderScene
                         </Text>

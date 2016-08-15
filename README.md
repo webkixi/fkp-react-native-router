@@ -17,7 +17,7 @@ include android back and dblclick exit
 ## Sample code  
 > index.js  
 
-```
+```js
 import React, { Component } from 'react';
 import {route} from 'fkp-react-native-router';  // route
 
@@ -29,7 +29,7 @@ export default class start extends Component {
                 bbb: require('./bbb').default,
                 ccc: require('./ccc').default,
             })
-            .start('aaa')
+            .start('aaa', {message: 'start'})
         )
     }
 }
@@ -37,44 +37,46 @@ export default class start extends Component {
 
 > aaa.js  
 
-```  
-....
-....
+```js  
+import {page, router} from 'fkp-react-native-router';
+
+let _Page;  //scope variable
+let _Intent;
+//....
+//....
 class Home extends Component {
-    render(){
-        return (
-            <TouchableHighlight
-                onPress={() => {
-                    Router('bbb', {xxx: 123})
-                }}>
-            >
-                <View>
-                    <Text>bbb</Text>
-                </View>
-            </TouchableHighlight>
-            <TouchableHighlight
-                onPress={() => {
-                    Router('ccc', {xxx: 456})
-                }}>
-            >
-                <View>
-                    <Text>ccc</Text>
-                </View>
-            </TouchableHighlight>
-        )
+    render() {
+      return (
+        <View style={styles.container}>
+          <Button
+              containerStyle={styles.button}
+              style={{fontSize: 20, color: '#fff'}}
+              styleDisabled={{color: 'red'}}
+              onPress={() => {
+                  _Page.router('bbb', {message: 'from aaa jump to bbb'})
+              }}>
+              Jump to bbb!
+          </Button>
+          <Button
+              containerStyle={styles.button}
+              style={{fontSize: 20, color: '#fff'}}
+              styleDisabled={{color: 'red'}}
+              onPress={() => {
+                  router('ccc', {message: 'from aaa jump to ccc'})
+              }}>
+              Jump to ccc!
+          </Button>
+          // ....
+        </View>
+      );
     }
 }
 
-export default function aaa(id){
+export default function start(id){
     return page.new({
         trigger: function(self, intent){
-            console.log(this)    // this === self
-            console.log(self)
-
-            console.log(this.router)    // router has some method as Navigator
-            console.log(this.back)      //
-
-            console.log(intent)
+            _Page = this;
+            _Intent = intent;
             return <Home data={intent}/>
         }
     })
@@ -83,16 +85,26 @@ export default function aaa(id){
 
 > bbb.js  
 
-```
-....
-....
+```js
+import {page, router} from 'fkp-react-native-router';
+// ....
+// ....
+let _Intent;
 
+class Bbb extends Component {
+    componentDidMount() {
+        Toast.show(_Intent.message);
+    }
+    // ....
+    render(){
+        // ....
+    }
+}
 
-export default function bbb(id){
+export default function start(id){
     return page.new({
-        trigger: function(self, intent){             
-            console.log(intent)
-            return <Other data={intent}/>
+        trigger: function(self, intent){
+            return <Bbb />
         }
     })
 }
@@ -100,16 +112,25 @@ export default function bbb(id){
 
 > ccc.js  
 
-```
-....
-....
+```js
+import {page, router} from 'fkp-react-native-router';
+// ....
+// ....
 
+class Ccc extends Component {
+    componentDidMount() {
+        Toast.show(_Intent.message);
+    }
+    // ....
+    render(){
+        // ....         
+    }
+}
 
 export default function ccc(id){
     return page.new({
         trigger: function(self, intent){             
-            console.log(intent)
-            return <Else data={intent}/>
+            return <Ccc data={intent}/>
         }
     })
 }
