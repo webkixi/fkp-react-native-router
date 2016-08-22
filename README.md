@@ -5,7 +5,7 @@ react-native router, it from `FKP-REACT-NATIVE`
 ### Demo   
 [实例](https://github.com/webkixi/fkp-demo-rn_router)   
 
-![demo](http://www.agzgz.com/rn_router.gif)
+![demo](http://www.agzgz.com/images/demo/rn_router.gif)
 
 
 
