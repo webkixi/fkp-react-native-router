@@ -3,7 +3,10 @@ react-native router, it from `FKP-REACT-NATIVE`
 抽离自`FKP-REACT-NATIVE`框架  
 
 ### Demo   
-[demo](https://github.com/webkixi/fkp-demo-rn_router)  
+[实例](https://github.com/webkixi/fkp-demo-rn_router)   
+
+![demo](http://www.agzgz.com/rn_router.gif)
+
 
 
 ## Introduce
