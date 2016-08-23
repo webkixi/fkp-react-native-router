@@ -2,6 +2,12 @@
 react-native router, it from `FKP-REACT-NATIVE`     
 抽离自`FKP-REACT-NATIVE`框架  
 
+## Install
+```
+npm install fkp-react-native-router -S
+```
+
+
 ### Demo   
 [实例](https://github.com/webkixi/fkp-demo-rn_router)   
 
