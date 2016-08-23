@@ -1,6 +1,6 @@
 # fkp-react-native-router
 react-native router, it from `FKP-REACT-NATIVE`     
-抽离自`FKP-REACT-NATIVE`框架, [hree](https://github.com/webkixi/FKP-REST)  
+抽离自`FKP-REACT-NATIVE`框架, [here](https://github.com/webkixi/FKP-REACT-NATIVE)  
 
 ## Install
 ```
