@@ -9,9 +9,9 @@ npm install fkp-react-native-router -S
 
 
 ### Demo   
-[实例](https://github.com/webkixi/fkp-demo-rn_router)   
+### [实例/instance](https://github.com/webkixi/fkp-demo-rn_router)   
 
-![demo](http://www.agzgz.com/images/demo/rn_router.gif)
+![demo gif](http://www.agzgz.com/images/demo/rn_router.gif)
 
 
 
